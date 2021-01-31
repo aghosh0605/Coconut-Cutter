@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 import time
 import serial
 
-app = Flask(__name__)
+app = Flask(__name__) #initating Flask
 
 #serial Communication Arduino
 ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
@@ -25,6 +25,7 @@ bottom_neg_right = 21
 sp1 = 15
 sp2 = 16
 
+#hand motors
 
 
 
@@ -106,8 +107,6 @@ def shrink():
     data1 = "shrink"
     GPIO.output(sp1, 1)
     GPIO.output(sp2, 0)
-    # GPIO.output(bottom_pos_left, 1)
-    # GPIO.output(bottom_neg_left, 0)
     return 'Shrinking whole body...'
 
 
@@ -116,8 +115,6 @@ def extend():
     data1 = "extend"
     GPIO.output(sp1, 0)
     GPIO.output(sp2, 1)
-    # GPIO.output(bottom_pos_left, 0)
-    # GPIO.output(bottom_neg_left, 1)
     return 'Extending whole body...'
 
 @app.route('/turnleft')
@@ -128,7 +125,7 @@ def turnleft():
     ser.flush()
     return 'Rotating the hand left...'
 
-@app.route('/turnright')
+@app.route('/turnright') 
 def turnright():
     data1 = "turnright"
     cmd = "rot1\n"

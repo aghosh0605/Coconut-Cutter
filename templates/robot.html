@@ -4,7 +4,13 @@
     <title>RUDRA | Coconut Cutter</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Loading JQuery Library from Online Sites -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Loading CSS styles -->
+
     <style>
       * {
         box-sizing: border-box;
@@ -71,7 +77,7 @@
         width: 100%;
         padding: 20px;
       }
-
+      /* Design of Flex */
       .flexdes {
         display: flex;
         flex-direction: row;
@@ -123,6 +129,9 @@
       }
     </style>
   </head>
+
+  <!-- Our Body for HTML starts here -->
+
   <body>
     <!-- Note -->
     <div style="background: #03045e; color: white; padding: 5px">
@@ -150,6 +159,7 @@
         <h5>Camera on Hand:</h5>
         <div class="fakeimg">
           <img src="http://192.168.1.157:8081" />
+          <!-- Change ip with your pi but not the default port if you aren't too sure -->
         </div>
         <p>
           Pi camera set to 10 FPS.Change all settings in Pi OS with "sudo nano
@@ -163,10 +173,6 @@
         >
           <p id="console"></p>
         </div>
-        <!-- <br />
-        <div class="fakeimg" style="height: 60px">Image</div>
-        <br />
-        <div class="fakeimg" style="height: 60px">Image</div> -->
       </div>
       <div class="main">
         <h2>Climbing Controls</h2>
@@ -192,13 +198,6 @@
             </button>
           </div>
         </div>
-        <!-- <p>Some text..</p>
-        <p>
-          Sunt in culpa qui officia deserunt mollit anim id est laborum
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco.
-        </p> -->
         <br />
         <h2>Control Hand</h2>
         <h5>
@@ -242,13 +241,6 @@
             </button>
           </div>
         </div>
-        <!-- <p>Some text..</p>
-        <p>
-          Sunt in culpa qui officia deserunt mollit anim id est laborum
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco.
-        </p> -->
       </div>
     </div>
 
@@ -256,6 +248,8 @@
     <div class="footer">
       <h2>Created by RUDRA Team3</h2>
     </div>
+
+    <!-- Here we are calling our HTTP Requests and getting Responses for feedback -->
 
     <script>
       $(document).ready(function () {
