@@ -149,7 +149,7 @@
         <h2>Visual FeedBack</h2>
         <h5>Camera on Hand:</h5>
         <div class="fakeimg">
-          <img src="http://192.168.0.160:8081" />
+          <img src="http://192.168.1.157:8081" />
         </div>
         <p>
           Pi camera set to 10 FPS.Change all settings in Pi OS with "sudo nano
@@ -157,7 +157,10 @@
         </p>
         <h3>Text Feedback</h3>
         <p>Sensor and Button Feedbacks:</p>
-        <div class="fakeimg" style="height: 200px; background-color: black">
+        <div
+          class="fakeimg"
+          style="height: 200px; background-color: black; color: white"
+        >
           <p id="console"></p>
         </div>
         <!-- <br />
@@ -229,6 +232,14 @@
             >
               CUT ALL!
             </button>
+            <button
+              class="release"
+              id="stopall"
+              type="button"
+              style="background-color: red"
+            >
+              CUT ALL!
+            </button>
           </div>
         </div>
         <!-- <p>Some text..</p>
@@ -243,7 +254,7 @@
 
     <!-- Footer -->
     <div class="footer">
-      <h2>Created by RUDRA Team</h2>
+      <h2>Created by RUDRA Team3</h2>
     </div>
 
     <script>
@@ -251,90 +262,148 @@
         $("#extend")
           .on("mousedown", function () {
             $.get("/extend");
+            $.get("/extend", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#shrink")
           .on("mousedown", function () {
             $.get("/shrink");
+            $.get("/shrink", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#holdup")
           .on("mousedown", function () {
             $.get("/holdup");
+            $.get("/holdup", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#releaseup")
           .on("mousedown", function () {
             $.get("/releaseup");
+            $.get("/releaseup", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#holddown")
           .on("mousedown", function () {
             $.get("/holddown");
+            $.get("/holddown", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#releasedown")
           .on("mousedown", function () {
             $.get("/releasedown");
+            $.get("/releasedown", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#turnleft")
           .on("mousedown", function () {
             $.get("/turnleft");
+            $.get("/turnleft", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#turnright")
           .on("mousedown", function () {
             $.get("/turnright");
+            $.get("/turnright", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#bendleft")
           .on("mousedown", function () {
             $.get("/bendleft");
+            $.get("/bendleft", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#bendright")
           .on("mousedown", function () {
             $.get("/bendright");
+            $.get("/bendright", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
         $("#cut")
           .on("mousedown", function () {
             $.get("/cut");
+            $.get("/cut", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
           })
           .on("mouseup", function () {
             $.get("/stop");
+            document.getElementById("console").innerHTML = "";
+          });
+        $("#stopall")
+          .on("mousedown", function () {
+            $.get("/stop");
+            $.get("/stop", function (data, status) {
+              document.getElementById("console").innerHTML =
+                "Data: " + data + "\nStatus: " + status;
+            });
+          })
+          .on("mouseup", function () {
+            $.get("/stop");
+            document.getElementById("console").innerHTML = "";
           });
       });
-    </script>
-
-    <script
-      type="application/javascript"
-      src="//cdn.rawgit.com/Alorel/console-log-html/master/console-log-html.min.js"
-    ></script>
-    <script>
-      ConsoleLogHTML.connect(document.getElementById("console")); // Redirect log messages
-      ConsoleLogHTML.disconnect(); //diconnects logs
     </script>
   </body>
 </html>

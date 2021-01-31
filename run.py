@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 #serial Communication Arduino
 ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-ser.flush()
 
 # Hold release Motors Left
 top_pos_left = 18
@@ -25,6 +24,8 @@ bottom_neg_right = 21
 #Spine Motor
 sp1 = 15
 sp2 = 16
+
+
 
 
 GPIO.setwarnings(False)
@@ -68,7 +69,7 @@ def holdup():
     GPIO.output(top_pos_right, 0)
     GPIO.output(top_neg_right, 1)
 
-    return 'true'
+    return 'Gripping with upper hand...'
 
 @app.route('/releaseup')
 def releaseup():
@@ -77,7 +78,7 @@ def releaseup():
     GPIO.output(bottom_neg_left, 1)
     GPIO.output(bottom_pos_right, 1)
     GPIO.output(bottom_neg_right, 0)
-    return 'true' 
+    return 'Releasing upper hand...' 
 
 @app.route('/holddown')
 def holddown():
@@ -86,7 +87,7 @@ def holddown():
     GPIO.output(bottom_neg_left, 0)
     GPIO.output(bottom_pos_right, 0)
     GPIO.output(bottom_neg_right, 1)
-    return 'true'    
+    return 'Gripping with lower hand...'    
 
 
 @app.route('/releasedown')
@@ -96,7 +97,7 @@ def releasedown():
     GPIO.output(top_neg_left, 1)
     GPIO.output(top_pos_right, 1)
     GPIO.output(top_neg_right, 0)
-    return 'true'
+    return 'Releasing lower hand...'
 
        
 
@@ -107,7 +108,7 @@ def shrink():
     GPIO.output(sp2, 0)
     # GPIO.output(bottom_pos_left, 1)
     # GPIO.output(bottom_neg_left, 0)
-    return 'true'
+    return 'Shrinking whole body...'
 
 
 @app.route('/extend')
@@ -117,7 +118,47 @@ def extend():
     GPIO.output(sp2, 1)
     # GPIO.output(bottom_pos_left, 0)
     # GPIO.output(bottom_neg_left, 1)
-    return 'true'
+    return 'Extending whole body...'
+
+@app.route('/turnleft')
+def turnleft():
+    data1 = "turnleft"
+    cmd = "rot2\n"
+    ser.write(cmd.encode())
+    ser.flush()
+    return 'Rotating the hand left...'
+
+@app.route('/turnright')
+def turnright():
+    data1 = "turnright"
+    cmd = "rot1\n"
+    ser.write(cmd.encode())
+    ser.flush()
+    return 'Rotating the hand right...'
+
+@app.route('/bendleft')
+def bendleft():
+    data1 = "bendleft"
+    cmd = "rot1\n"
+    ser.write(cmd.encode())
+    ser.flush()
+    return 'Bending the hand left...'
+
+@app.route('/bendright')
+def bendright():
+    data1 = "bendright"
+    cmd = "rot1\n"
+    ser.write(cmd.encode())
+    ser.flush()
+    return 'Bending the hand right...'
+
+@app.route('/cut')
+def cut():
+    data1 = "cut"
+    cmd = "rot1\n"
+    ser.write(cmd.encode())
+    ser.flush()
+    return 'Cut the coconuts'
 
 
 @app.route('/stop')
@@ -133,7 +174,7 @@ def stop():
     GPIO.output(bottom_neg_right, 0)
     GPIO.output(sp1, 0)
     GPIO.output(sp2, 0)
-    return 'true'
+    return 'Stopping all components...'
 
 
 if __name__ == "__main__":
