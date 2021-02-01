@@ -1,5 +1,5 @@
 # Coconut_Cutter-RUDRA
-A trend going in South for making coconut cutter robot as it's difficult now a days to find a man to cut coconuts and in South there is too much coconut trees everywhere. So after our 1 months of hard work we finally did the prototype of the robot.
+A trend going in South of India for making coconut cutter robot as it's difficult now a days to find a man to cut coconuts and in South there is too much coconut trees everywhere. So after our 1 months of hard work we finally did the prototype of the robot.
 
 # Beaware of this
 * Used Raspberry Pi4, Arduino to do the project.
