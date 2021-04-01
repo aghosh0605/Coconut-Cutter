@@ -10,9 +10,9 @@ A trend going in South of India for making coconut cutter robot as it's difficul
 - Used Raspberry Pi4, Arduino to do the project.
 - Tested On RPi4. Please connect Arduino with RPi before running the code.
 - Don't change any file and folder name and dicrectories structure.
-- Put all the files in Pi and run the python file named `flask_app.py` with python3.
-- Don't change Pi Camera ip address in `index.html`
-- You can change the flask webserver port also for hosting in `flask_app.py`
+- Put all the files in Pi and run the python file named `codings/flask_app.py` with python3.
+- Don't change Pi Camera ip address in `codings/index.html`
+- You can change the flask webserver port also for hosting in `codings/flask_app.py`
 
 ### If you have all the components then follow `How to run :)` otherwise go with Docker Container at `docker_test Folder Documentation`.
 
@@ -36,7 +36,7 @@ A trend going in South of India for making coconut cutter robot as it's difficul
    - Upload the Arduino code.
    - Connect the Arduino with Pi by USB
 
-3. Run the python file by `python3 flask_app.py`. Now, open the webpage with ip address and port number of Pi from any device within the Network and enjoy.
+3. Run the python file by `python3 codings/flask_app.py`. Now, open the webpage with ip address and port number of Pi from any device within the Network and enjoy.
 
 
 # docker_test Folder Documentation
