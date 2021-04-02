@@ -30,6 +30,7 @@ A trend going in South of India for making coconut cutter robot as it's difficul
    - Keep the HTML file in **templates** otherwise you will get an error.
    - If you change HTML page name, be sure to change it also in python code also.
    - For further webpage development with different CSS, javascript, HTML file in flask [see this](https://exploreflask.com/en/latest/organizing.html)
+   - Sometimes you need to manually kill the process with CLI. Use this command `sudo kill -9 $(sudo lsof -t -i:8888)`. Change the port according to your wish. Mine is 8888.
 
 2. Arduino Setup
 
