@@ -49,7 +49,7 @@ Inside the **docker_test** folder run the commands. **docker_flask:v1** is the n
 
 - `sudo docker build -t docker_flask:v1 .` Build the docker image  
 - `sudo docker images` Check if the docker image was created successfully
-- `sudo docker run --privileged -p 8888:8888 docker_flask:v1` Run the docker image in a container with mapping inner port 8888 with outer port 8888
+- `sudo docker run --privileged -p 8888:8888 docker_flask:v1` Publish a container's port(s) to the host. For an example command it would be `docker run -p [HOST]:[CONTAINER]`
 - `sudo docker container ls` Shows running docker containers
 - `sudo docker stop <container id>` Stops the container that has the id. Find the container id with previous command.
 - `sudo docker rmi --force docker_flask:v1` Force removes the docker image
